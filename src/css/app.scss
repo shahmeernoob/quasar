@@ -128,3 +128,12 @@
   min-height: 56px !important;
   min-width: 56px !important;
 }
+
+.q-field__control {
+  color: var(--q-primary);
+  height: 56px;
+  max-width: 100%;
+  outline: none;
+  border-radius: 10px !important;
+  padding: 0px  0px 25px 15px;
+}

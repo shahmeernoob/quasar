@@ -14,7 +14,7 @@
           </q-drawer>
         </div>
         <div class="col-6 q-pa-sm q-pb-md q-mb-sm text-right lt-md">
-          <q-btn class="bg-white q-pa-sm rounded-8 " flat @click="drawerRight = !drawerRight" dense>
+          <q-btn class="bg-white q-pa-sm  rounded-8" flat  @click="drawerRight = !drawerRight"  dense>
             <q-icon name="arrow_back_ios"/>
           </q-btn>
           <q-drawer side="right" v-model="drawerRight" elevated class="bg-grey1 text-white text-left">
@@ -27,15 +27,15 @@
           </q-drawer>
         </div>
         
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 q-pt-lg q-pl-lg gt-sm">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 q-pt-lg q-pl-lg gt-sm"  >
           <div>
             <JoinComp/>
           </div>
         </div>
-        <div class="col-md-6 col-lg-7 col-sm-12 col-xs-12 q-pt-lg q-pl-lg">
+        <div class="col-md-6 col-lg-7 col-sm-12 col-xs-12 " :class="$q.screen.lt.sm ?'q-pt-xs' : 'q-pt-lg' , $q.screen.lt.sm ? '' : 'q-pl-lg'">
             <div class="row bg-white rounded-10">
               <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                <div class="q-ma-lg bg-e8e8e8 rounded-10 q-py-lg q-px-sm">
+                <div class="bg-e8e8e8 rounded-10 q-py-lg q-px-sm" :class="$q.screen.lt.sm ? 'q-ma-md' : 'q-ma-lg'">
                   <div class="">
                       <div class="q-mr-sm" >
                           <span class="q-icon rounded-100 q-pa-lg bg-bfbfbf p-48" style="border: 2px solid black;">
@@ -93,12 +93,8 @@
                 <q-btn flat class="seting1">
                     <q-img class="" src="https://clubby.me/icons/Cluby-C.svg" style="width: 30px; height: 30px;"/>
                 </q-btn>
-                <q-item-section>
-                  <q-field filled stack-label class="rounded-8">
-                    <template v-slot:control>
-                     <div class="self-center full-width no-outline ">Annuncment</div>
-                    </template>
-                  </q-field>
+                <q-item-section> 
+                  <q-input class="" bg-color="grey-5" borderless v-model="text"  placeholder="Annoucmenet" />
                 </q-item-section>
                 <q-btn no-caps flat class="bg-black rounded-8 gt-xs">
                   <span  class="block text-white f-ssp600 f-14 ">Publish</span>
@@ -170,4 +166,13 @@ import { ref } from 'vue'
 
 const drawerLeft = ref(false)
 const drawerRight = ref(false)
+const conditon = ref(true)
 </script>
+
+
+
+<style scoped>
+
+
+
+</style>
